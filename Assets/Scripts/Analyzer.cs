@@ -31,9 +31,9 @@ public class Analyzer : MonoBehaviour
 
         if ( average > 0.2f)
         {
-            print("beat");
+            //print("beat");
         }
 
-        print(average);
+        //print(average);
     }
 }
