@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        DOTween.SetTweensCapacity(500, 50);
         if (!menuManager)
         {
             menuManager = this;
@@ -50,5 +51,10 @@ public class UIManager : MonoBehaviour
         {
             text.text = "<";
         }
+    }
+
+    public void ChangeVolume(float vol)
+    {
+
     }
 }
