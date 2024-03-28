@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpinAddonNV : MonoBehaviour
 {
-    [Range(0,10)] public float rotSpeed;
+    [Range(0,1000)] public float rotSpeed;
     public Vector3 rotateDir = Vector3.left;
     [Range(0,359)]public float snapAngle;
     [Range(0,1)]public float maxVolume = 0.3f;
@@ -18,7 +18,7 @@ public class SpinAddonNV : MonoBehaviour
 
     public void Spin(float volume)
     {
-        if(snapAngle == 0)transform.Rotate(rotateDir * rotSpeed * volume);
+        if(snapAngle == 0)transform.Rotate(rotateDir * rotSpeed * volume * Time.deltaTime);
         else if(volume >= minVolume && volume <= maxVolume)  transform.Rotate(rotateDir * snapAngle);
     }
 }

@@ -7,7 +7,7 @@ public class CircleDancer : MonoBehaviour
     [Range(1, 50)] public int count = 10;
     [Range(0, 10)] public float radius = 5f;
 
-    [Range(-100, 100)]public float rotateSpeed = 2f;
+    [Range(-1000, 1000)]public float rotateSpeed = 2f;
     [Range(-10, 10)] public float sensitivity = 2f;
     [Range(-5, 5)] public float boost = 1.5f;
 
@@ -37,7 +37,7 @@ public class CircleDancer : MonoBehaviour
 
     public void Dance(float volume)
     {
-        transform.Rotate(0, 0, Mathf.Pow(volume * boost, sensitivity) * rotateSpeed);
+        transform.Rotate(0, 0, Mathf.Pow(volume * boost, sensitivity) * rotateSpeed * Time.deltaTime);
         transform.localScale = Vector3.one * volume + Vector3.one * minSize;
     }
 }
